@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isotécnica</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="Assets/img/index/cropped-LOGO-QUAD.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="Assets/css/style.css" rel="stylesheet" />
+    <script src="Assets/js/script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header id="siteHeader">
+      <!-- TOPBAR -->
+      <div class="topbar">
+        <div class="container">
+          <div class="topbar-content">
+            <a href="tel:+56228870292">
+              <i class="bi bi-telephone-fill"></i>
+
+              +56 2 2887 0292
+            </a>
+
+            <a href="mailto:comercial@isotecnica.cl">
+              <i class="bi bi-envelope-fill"></i>
+
+              comercial@isotecnica.cl
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- NAVBAR -->
+
+      <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+        <div class="container">
+          <!-- LOGO -->
+
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="Assets/img/index/LOGO-FULL.png"
+              alt="Isotecnica"
+              class="logo-main"
+            />
+          </a>
+
+          <!-- MOBILE BUTTON -->
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- MENU -->
+
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+              <!-- CALEFACCION -->
+
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="calefaccion.html"> Calefacción </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="calderas-murales.html">
+                      Calderas Murales
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="calderas-pie.html">
+                      Calderas de Pie
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="quemadores.html">
+                      Quemadores
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- BOMBAS -->
+
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="bombas.html"> Bombas de Agua </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#"> Bombas Superficie </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#"> Bombas Multietapas </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#"> Bombas Sumergibles </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Bombas de Pozo Profundo
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#"> Hidroneumáticos </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#"> Equipos de Fuerza </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- BOOSTER -->
+
+              <li class="nav-item">
+                <a class="nav-link" href="booster.html"> Booster </a>
+              </li>
+
+              <!-- CONTACTO -->
+
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto"> Contacto </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="hero">
+      <div id="slider" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#slider"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#slider"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#slider"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#slider"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#slider"
+            data-bs-slide-to="4"
+            aria-label="Slide 5"
+          ></button>
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="Assets/img/index/001.png"
+              class="d-block w-100 hero-image"
+              alt="Slide 1"
+            />
+          </div>
+
+          <div class="carousel-item">
+            <img
+              src="Assets/img/index/002.png"
+              class="d-block w-100 hero-image"
+              alt="Slide 2"
+            />
+          </div>
+
+          <div class="carousel-item">
+            <img
+              src="Assets/img/index/003.png"
+              class="d-block w-100 hero-image"
+              alt="Slide 3"
+            />
+          </div>
+
+          <div class="carousel-item">
+            <img
+              src="Assets/img/index/004.png"
+              class="d-block w-100 hero-image"
+              alt="Slide 4"
+            />
+          </div>
+
+          <div class="carousel-item">
+            <img
+              src="Assets/img/index/005.png"
+              class="d-block w-100 hero-image"
+              alt="Slide 5"
+            />
+          </div>
+        </div>
+
+        <!-- Flecha anterior -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#slider"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+
+        <!-- Flecha siguiente -->
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#slider"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="benefits py-3">
+      <div class="container">
+        <div class="row text-center align-items-center">
+          <div class="col-md-3">
+            <a href="#"
+              ><img
+                src="Assets/img/index/MERCADO-PUBLICO.png"
+                class="img-fluid"
+            /></a>
+          </div>
+          <div class="col-md-3">
+            <a href="#"
+              ><img
+                src="Assets/img/index/ESTACIONAMIENTO.png"
+                class="img-fluid"
+            /></a>
+          </div>
+          <div class="col-md-3">
+            <a href="#"
+              ><img src="Assets/img/index/TRANSBANK.png" class="img-fluid"
+            /></a>
+          </div>
+          <div class="col-md-3">
+            <a href="#"
+              ><img src="Assets/img/index/ENVIO.png" class="img-fluid"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section py-5">
+      <div class="container">
+        <div class="row gy-5">
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <img src="Assets/img/index/Serv_Cald.png" class="service-icon" />
+              <div>
+                <h4>Calefacción</h4>
+                <ul>
+                  <li>Calderas Murales</li>
+                  <li>Calderas de Pie</li>
+                  <li>Quemadores</li>
+                  <li>Calefon</li>
+                  <li>Acumuladores</li>
+                  <li>Intercambiadores de Calor</li>
+                  <li>Accesorios</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <img src="Assets/img/index/Serv_Bomb.png" class="service-icon" />
+              <div>
+                <h4>Bombas de Agua</h4>
+                <ul>
+                  <li>Bombas Superficie</li>
+                  <li>Bombas Multietapas</li>
+                  <li>Bombas Sumergibles</li>
+                  <li>Hidroneumáticos</li>
+                  <li>Equipos de Fuerza</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <img src="Assets/img/index/Serv_Tabl.png" class="service-icon" />
+              <div>
+                <h4>Electricidad y Control</h4>
+                <ul>
+                  <li>Tableros Eléctricos</li>
+                  <li>Equipos de Fuerza</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <img
+                src="Assets/img/index/Serv_AguaCal.png"
+                class="service-icon"
+              />
+              <div>
+                <h4>Sistemas Agua Caliente</h4>
+                <ul>
+                  <li>Sistemas de Agua Caliente Sanitaria.</li>
+                  <li>Sistemas de Agua Caliente Industrial</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <img src="Assets/img/index/Serv_Sala.png" class="service-icon" />
+              <div>
+                <h4>Salas de Bombas</h4>
+                <p>Plantas de Elevación de:</p>
+                <ul>
+                  <li>Agua Potable</li>
+                  <li>Aguas Servidas</li>
+                  <li>Aguas Lluvias</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <img src="Assets/img/index/Serv_Proy.png" class="service-icon" />
+              <div>
+                <h4>Proyectos</h4>
+                <p>Ingeniería, Diseño, Suministro y Montaje de Proyectos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="brands">
+      <div class="container">
+        <!-- Fila 1 -->
+        <div
+          class="row text-center align-items-center justify-content-center g-4 mb-4"
+        >
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/pedrollo.png"
+              class="img-fluid brand-logo"
+              alt="Marca 1"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/espa.png"
+              class="img-fluid brand-logo"
+              alt="Marca 2"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/KSB-logo.jpg"
+              class="img-fluid brand-logo"
+              alt="Marca 3"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/pentax.png"
+              class="img-fluid brand-logo"
+              alt="Marca 4"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/reggio.png"
+              class="img-fluid brand-logo"
+              alt="Marca 5"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/stairs.png"
+              class="img-fluid brand-logo"
+              alt="Marca 6"
+            />
+          </div>
+        </div>
+
+        <!-- Fila 2 -->
+        <div
+          class="row text-center align-items-center justify-content-center g-4"
+        >
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/wilo.png"
+              class="img-fluid brand-logo"
+              alt="Marca 7"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/leo.png"
+              class="img-fluid brand-logo"
+              alt="Marca 8"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/dab.png"
+              class="img-fluid brand-logo"
+              alt="Marca 9"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/varem.png"
+              class="img-fluid brand-logo"
+              alt="Marca 10"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/riello.png"
+              class="img-fluid brand-logo"
+              alt="Marca 11"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/anwo-1.png"
+              class="img-fluid brand-logo"
+              alt="Marca 12"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="map-section">
+      <iframe
+        src="https://www.google.com/maps?q=Club+Hipico+4676+Pedro+Aguirre+Cerda&output=embed"
+        loading="lazy"
+      >
+      </iframe>
+    </section>
+    <section id="contacto" class="py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-8">
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input class="form-control" placeholder="Nombre" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input class="form-control" placeholder="Correo" />
+                </div>
+              </div>
+              <div class="mb-3">
+                <input class="form-control" placeholder="Asunto" />
+              </div>
+              <div class="mb-3">
+                <textarea
+                  class="form-control"
+                  rows="6"
+                  placeholder="Mensaje"
+                ></textarea>
+              </div>
+              <button class="btn btn-danger">Enviar</button>
+            </form>
+          </div>
+
+          <div class="col-lg-4">
+            <h4 class="contact-title">Contáctanos</h4>
+            <p>
+              <i class="bi bi-geo-alt-fill text-danger"></i> Club Hípico 4676
+            </p>
+            <p>
+              <i class="bi bi-envelope-fill text-danger"></i>
+              comercial@isotecnica.cl
+            </p>
+            <p>
+              <i class="bi bi-telephone-fill text-danger"></i> +56 2 2887 0292
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer py-4 text-center">© Isotécnica</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

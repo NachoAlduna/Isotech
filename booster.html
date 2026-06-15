@@ -1,0 +1,907 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isotécnica</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="Assets/img/index/cropped-LOGO-QUAD.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="Assets/css/style.css" rel="stylesheet" />
+    <script src="Assets/js/script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header id="siteHeader">
+      <!-- TOPBAR -->
+      <div class="topbar">
+        <div class="container">
+          <div class="topbar-content">
+            <a href="tel:+56228870292">
+              <i class="bi bi-telephone-fill"></i>
+
+              +56 2 2887 0292
+            </a>
+
+            <a href="mailto:comercial@isotecnica.cl">
+              <i class="bi bi-envelope-fill"></i>
+
+              comercial@isotecnica.cl
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- NAVBAR -->
+
+      <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+        <div class="container">
+          <!-- LOGO -->
+
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="Assets/img/index/LOGO-FULL.png"
+              alt="Isotecnica"
+              class="logo-main"
+            />
+          </a>
+
+          <!-- MOBILE BUTTON -->
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- MENU -->
+
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+              <!-- CALEFACCION -->
+
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="calefaccion.html"> Calefacción </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="calderas-murales.html">
+                      Calderas Murales
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="calderas-pie.html">
+                      Calderas de Pie
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="quemadores.html">
+                      Quemadores
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- BOMBAS -->
+
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="bombas.html"> Bombas de Agua </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#"> Bombas Superficie </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#"> Bombas Multietapas </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#"> Bombas Sumergibles </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Bombas de Pozo Profundo
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#"> Hidroneumáticos </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#"> Equipos de Fuerza </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- BOOSTER -->
+
+              <li class="nav-item">
+                <a class="nav-link" href="booster.html"> Booster </a>
+              </li>
+
+              <!-- CONTACTO -->
+
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto"> Contacto </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="hero">
+      <div id="slider" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#slider"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#slider"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#slider"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#slider"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#slider"
+            data-bs-slide-to="4"
+            aria-label="Slide 5"
+          ></button>
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="Assets/img/booster/slides/100-SKID-HOME.png"
+              class="d-block w-100 hero-image"
+              alt="Slide 1"
+            />
+          </div>
+
+          <div class="carousel-item">
+            <img
+              src="Assets/img/booster/slides/101-SKID-HOME.png"
+              class="d-block w-100 hero-image"
+              alt="Slide 2"
+            />
+          </div>
+
+          <div class="carousel-item">
+            <img
+              src="Assets/img/booster/slides/102-SKID-HOME.png"
+              class="d-block w-100 hero-image"
+              alt="Slide 3"
+            />
+          </div>
+        </div>
+
+        <!-- Flecha anterior -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#slider"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+
+        <!-- Flecha siguiente -->
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#slider"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     BLOQUE 1: SKIDS DE BOMBAS / SISTEMAS DE FUERZA
+     Layout: imagen-slider izq | texto der  /  texto izq | imagen-slider der
+     ═══════════════════════════════════════════════════════════════ -->
+    <section class="iso-section">
+      <div class="container">
+        <!-- ROW 1: imagen izquierda / texto derecha -->
+        <div class="row align-items-center g-5">
+          <div class="col-md-6">
+            <div class="slider-outer">
+              <div class="iso-slider-wrap">
+                <div
+                  id="sliderSkids"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        src="Assets/img/booster/alt100.png"
+                        alt="Booster 1"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="Assets/img/booster/alt101.png"
+                        alt="Booster 2"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="Assets/img/booster/alt102.png"
+                        alt="Booster 3"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="Assets/img/booster/alt103.png"
+                        alt="Booster 4"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="Assets/img/booster/alt104.png"
+                        alt="Booster 5"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#sliderSkids" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#sliderSkids" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <p class="section-title">
+              Skids de Bombas / Grupos de Presión / Boosters
+            </p>
+            <p class="section-body">
+              Nuestra oferta de equipos de presurización contempla un amplio
+              espectro de aplicación. Desde Unidades Domiciliarias, Sistemas de
+              Edificios, Plantas de Agua Potable Rural, Sistemas de suministro y
+              distribución de Agua Potable, Riego Tecnificado, entre otras
+              alternativas. Podemos ofrecer grupos de presurización de
+              fabricación específica, según requerimientos, en cualquier marca,
+              modelo y tipo de Bomba. También podemos ofrecer Equipos de Línea
+              comercial e industrial.
+            </p>
+          </div>
+        </div>
+
+        <hr class="iso-divider" />
+
+        <!-- ROW 2: texto izquierda / imagen derecha -->
+        <div class="row align-items-center g-5">
+          <div class="col-md-6 order-md-2">
+            <div class="slider-outer">
+              <div class="iso-slider-wrap">
+                <div
+                  id="sliderControl"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        src="Assets/img/booster/control100.png"
+                        alt="Control 1"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="Assets/img/booster/control101.png"
+                        alt="Control 2"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="Assets/img/booster/control102.png"
+                        alt="Control 2"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#sliderControl" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#sliderControl" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-md-6 order-md-1">
+            <p class="section-title">
+              Sistemas de Fuerza y Control Grupos de Presión
+            </p>
+            <p class="section-body">
+              Sistemas de Fuerza y Control diseñados, fabricados y montados en
+              cada SKID, diseñados en función de cada requerimiento. Lógicas de
+              Control para alternancia, funcionamiento en cascada, alta
+              eficiencia energética y fiabilidad. Variadores de frecuencia (VDF)
+              múltiples para todas las bombas, generando un ahorro energético de
+              hasta un 70% anual, además de minimizar el estrés mecánico sobre
+              equipos e instalaciones. Opcionalmente equipos con «mono-VDF+PLC»,
+              comunicación Ethernet/rs-485 y Pantallas HMI.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════════════════════════════
+     BLOQUE 2: CARDS  – 4 TIPOS DE BOOSTERS
+     ═══════════════════════════════════════════════════════════════ -->
+    <section
+  class="iso-section-sm"
+  style="background: var(--iso-light); padding-top: 2rem; padding-bottom: 2.5rem;"
+>
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-6 col-md-3">
+        <div class="booster-card">
+          <div class="card-slider-wrap">
+            <div id="sliderCard1" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="Assets/img/booster/LR101.png" alt="Booster Bajo 1" />
+                </div>
+                <div class="carousel-item">
+                  <img src="Assets/img/booster/LR102.png" alt="Booster Bajo 2" />
+                </div>
+                <div class="carousel-item">
+                  <img src="Assets/img/booster/LR103.png" alt="Booster Bajo 3" />
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#sliderCard1" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#sliderCard1" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+          <p class="card-title">Boosters – Rango Bajo</p>
+          <p class="card-text">
+            Grupos de Presión de bajos caudales para Sistemas Domiciliarios,
+            Condominios, Riego y Pequeños procesos industriales. Con caudales
+            desde 100 lts/min hasta 600 lts/min. Disponibles en 230VAC-1F-50Hz
+            y en 380/400VAC-3F-50Hz.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-6 col-md-3">
+        <div class="booster-card">
+          <div class="card-slider-wrap">
+            <div id="sliderCard2" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="Assets/img/booster/MR201.png" alt="Booster Medio 1" />
+                </div>
+                <div class="carousel-item">
+                  <img src="Assets/img/booster/MR202.png" alt="Booster Medio 2" />
+                </div>
+                <div class="carousel-item">
+                  <img src="Assets/img/booster/MR203.png" alt="Booster Medio 3" />
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#sliderCard2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#sliderCard2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+          <p class="card-title">Boosters – Rango Medio</p>
+          <p class="card-text">
+            Grupos de presión para aplicaciones en Edificios residenciales,
+            Públicos, Plantas de Agua Potable Rural y Procesos Industriales.
+            Con caudales desde 700 lts/min hasta 1400 lts/min. Con estándar
+            de presión PN16 y PN25, disponibles en 380/400VAC-3F-50Hz.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-6 col-md-3">
+        <div class="booster-card">
+          <div class="card-slider-wrap">
+            <div id="sliderCard3" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="Assets/img/booster/HR302.png" alt="Booster Alto 1" />
+                </div>
+                <div class="carousel-item">
+                  <img src="Assets/img/booster/HR304.png" alt="Booster Alto 2" />
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#sliderCard3" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#sliderCard3" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+          <p class="card-title">Boosters – Rango Alto</p>
+          <p class="card-text">
+            Grupos de presión para grandes Edificios residenciales, Públicos,
+            Plantas de Producción y Distribución de Agua Potable, Procesos
+            Industriales y HVAC. Caudales desde 1500 lts/min hasta 5700 lts/min.
+            PN16 y PN25, disponibles en 380/400VAC-3F-50Hz y alternativas según
+            requerimiento.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-6 col-md-3">
+        <div class="booster-card">
+          <div class="card-slider-wrap">
+            <div id="sliderCard4" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="Assets/img/booster/booster_scaled1.jpg" alt="Booster Comercial 1" />
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#sliderCard4" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#sliderCard4" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+          <p class="card-title">Boosters – Línea Comercial</p>
+          <p class="card-text">
+            Grupos de presión para aplicaciones genéricas en plantas de Agua
+            Potable. Estándar PN16, disponibles en 380/400VAC-3F-50Hz. Marcas
+            como KSB línea Hyamat y Espa línea CKE.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     BLOQUE 3: DISEÑO E INGENIERÍA / SUMINISTRO Y FABRICACIÓN /
+               COMISIONAMIENTO – sliders alternativos
+     ═══════════════════════════════════════════════════════════════ -->
+    <section class="iso-section">
+      <div class="container">
+        <!-- ROW A: imagen izq | texto Diseño e Ingeniería der -->
+        <div class="row align-items-center g-4 mb-4">
+          <div class="col-md-6">
+            <div class="slider-outer">
+              <div class="iso-slider-wrap">
+                <div
+                  id="sliderDiseno"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#sliderDiseno"
+                      data-bs-slide-to="0"
+                      class="active"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#sliderDiseno"
+                      data-bs-slide-to="1"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#sliderDiseno"
+                      data-bs-slide-to="2"
+                    ></button>
+                  </div>
+                  <div class="carousel-inner rounded-1 overflow-hidden">
+                    <div class="carousel-item active">
+                      <img src="Assets/img/booster/skid-cnP-2.88.jpg" alt="Diseño 1" class="iso-slide-img" />
+                    </div>
+                    <div class="carousel-item">
+                      <img src="Assets/img/booster/simu3.png" alt="Diseño 2" class="iso-slide-img" /  >
+                    </div>
+                     <div class="carousel-item">
+                      <img src="Assets/img/booster/simu4.png" alt="Diseño 2" class="iso-slide-img" /  >
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#sliderDiseno" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+                    <span class="visually-hidden">Anterior</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#sliderDiseno" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+                    <span class="visually-hidden">Siguiente</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <p class="section-title">Diseño e Ingeniería</p>
+            <p class="section-body">
+              Todos nuestros equipos son diseñados y desarrollados según
+              normativas y estándares nacionales e internacionales. Procurando
+              sistemas fiables, duraderos, de alta eficiencia y la mejor opción
+              precio calidad del mercado.
+            </p>
+          </div>
+        </div>
+
+        <hr class="iso-divider" />
+
+        <!-- ROW B: texto Suministro izq | imagen der -->
+        <div class="row align-items-center g-4 mb-4">
+          <div class="col-md-6 order-md-1 order-2">
+            <p class="section-title">Suministro y Fabricación</p>
+            <p class="section-body">
+              Nuestros Equipos son fabricados y armados en nuestros propios
+              talleres, ofreciendo los plazos de entrega mínimos y supervisión
+              de todos los procesos productivos.
+            </p>
+          </div>
+          <div class="col-md-6 order-md-2 order-1">
+            <div class="slider-outer">
+              <div class="iso-slider-wrap">
+                <div
+                  id="sliderSuministro"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#sliderSuministro"
+                      data-bs-slide-to="0"
+                      class="active"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#sliderSuministro"
+                      data-bs-slide-to="1"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#sliderSuministro"
+                      data-bs-slide-to="2"
+                    ></button>
+                  </div>
+                  <div class="carousel-inner rounded-1 overflow-hidden">
+                    <div class="carousel-item active">
+                      <img src="Assets/img/booster/cont10.png" alt="Diseño 1" class="iso-slide-img" />
+                    </div>
+                    <div class="carousel-item">
+                      <img src="Assets/img/booster/cont11.png" alt="Diseño 2" class="iso-slide-img" /  >
+                    </div>
+                     <div class="carousel-item">
+                      <img src="Assets/img/booster/cont12.png" alt="Diseño 2" class="iso-slide-img" /  >
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#sliderSuministro" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+                    <span class="visually-hidden">Anterior</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#sliderSuministro" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+                    <span class="visually-hidden">Siguiente</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="iso-divider" />
+
+        <!-- ROW C: imagen izq | texto Comisionamiento der -->
+        <div class="row align-items-center g-4">
+          <div class="col-md-6">
+            <div class="slider-outer">
+              <div class="iso-slider-wrap">
+                <div
+                  id="sliderComision"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#sliderComision"
+                      data-bs-slide-to="0"
+                      class="active"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#sliderComision"
+                      data-bs-slide-to="1"
+                    ></button>
+                  </div>
+                  <div class="carousel-inner rounded-1 overflow-hidden">
+                    <div class="carousel-item active">
+                      <img src="Assets/img/booster/com101.png" alt="Diseño 1" class="iso-slide-img" />
+                    </div>
+                    <div class="carousel-item">
+                      <img src="Assets/img/booster/com113.png" alt="Diseño 2" class="iso-slide-img" /  >
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#sliderComision" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+                    <span class="visually-hidden">Anterior</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#sliderComision" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+                    <span class="visually-hidden">Siguiente</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <p class="section-title">Comisionamiento y Puesta en Marcha</p>
+            <p class="section-body">
+              Proporcionamos Equipos listos para operar con diseños ergonómicos
+              y de fácil manipulación. Procesos de Puesta en Marcha e
+              Implementación fáciles y Rápidos. Solo se debe Conectar las
+              cañerías al colector de succión, colector de impulsión y los
+              cables de Alimentación en el Tablero de Fuerza y Control.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="brands">
+      <div class="container">
+        <div class="row text-center align-items-center">
+          <div class="col-md-3">
+            <a href="#"
+              ><img
+                src="Assets/img/index/MERCADO-PUBLICO.png"
+                class="img-fluid"
+            /></a>
+          </div>
+          <div class="col-md-3">
+            <a href="#"
+              ><img
+                src="Assets/img/index/ESTACIONAMIENTO.png"
+                class="img-fluid"
+            /></a>
+          </div>
+          <div class="col-md-3">
+            <a href="#"
+              ><img src="Assets/img/index/TRANSBANK.png" class="img-fluid"
+            /></a>
+          </div>
+          <div class="col-md-3">
+            <a href="#"
+              ><img src="Assets/img/index/ENVIO.png" class="img-fluid"
+            /></a>
+          </div>
+        </div>
+
+        <!-- Fila 1 -->
+        <div
+          class="row text-center align-items-center justify-content-center g-4 mb-4"
+        >
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/pedrollo.png"
+              class="img-fluid brand-logo"
+              alt="Marca 1"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/espa.png"
+              class="img-fluid brand-logo"
+              alt="Marca 2"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/KSB-logo.jpg"
+              class="img-fluid brand-logo"
+              alt="Marca 3"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/pentax.png"
+              class="img-fluid brand-logo"
+              alt="Marca 4"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/reggio.png"
+              class="img-fluid brand-logo"
+              alt="Marca 5"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/stairs.png"
+              class="img-fluid brand-logo"
+              alt="Marca 6"
+            />
+          </div>
+        </div>
+
+        <!-- Fila 2 -->
+        <div
+          class="row text-center align-items-center justify-content-center g-4"
+        >
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/wilo.png"
+              class="img-fluid brand-logo"
+              alt="Marca 7"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/leo.png"
+              class="img-fluid brand-logo"
+              alt="Marca 8"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/dab.png"
+              class="img-fluid brand-logo"
+              alt="Marca 9"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/varem.png"
+              class="img-fluid brand-logo"
+              alt="Marca 10"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/riello.png"
+              class="img-fluid brand-logo"
+              alt="Marca 11"
+            />
+          </div>
+
+          <div class="col-6 col-md-2">
+            <img
+              src="Assets/img/index/brands/anwo-1.png"
+              class="img-fluid brand-logo"
+              alt="Marca 12"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section id="contacto" class="py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-8">
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input class="form-control" placeholder="Nombre" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input class="form-control" placeholder="Correo" />
+                </div>
+              </div>
+              <div class="mb-3">
+                <input class="form-control" placeholder="Asunto" />
+              </div>
+              <div class="mb-3">
+                <textarea
+                  class="form-control"
+                  rows="6"
+                  placeholder="Mensaje"
+                ></textarea>
+              </div>
+              <button class="btn btn-danger">Enviar</button>
+            </form>
+          </div>
+
+          <div class="col-lg-4">
+            <h4 class="contact-title">Contáctanos</h4>
+            <p>
+              <i class="bi bi-geo-alt-fill text-danger"></i> Club Hípico 4676
+            </p>
+            <p>
+              <i class="bi bi-envelope-fill text-danger"></i>
+              comercial@isotecnica.cl
+            </p>
+            <p>
+              <i class="bi bi-telephone-fill text-danger"></i> +56 2 2887 0292
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer py-4 text-center">© Isotécnica</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
