@@ -582,3 +582,62 @@ a {
   color: #333;
   margin: 0;
 }
+.producto {
+  padding: 60px 0;
+
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.producto:last-child {
+  border: none;
+}
+
+.producto img {
+  width: 100%;
+
+  object-fit: contain;
+}
+
+.producto h2 {
+  font-weight: 700;
+
+  margin-top: 25px;
+}
+
+.producto .btn {
+  margin-top: 20px;
+}
+
+.tabla-productos {
+  font-size: 0.95rem;
+}
+
+.tabla-productos thead {
+  background: #d52b1e;
+
+  color: white;
+}
+
+.tabla-productos th {
+  text-align: center;
+
+  vertical-align: middle;
+}
+
+.tabla-productos td {
+  vertical-align: middle;
+
+  text-align: center;
+}
+
+.tabla-productos tbody tr:hover {
+  background: #fafafa;
+}
+
+.kit-title {
+  margin-top: 45px;
+
+  margin-bottom: 15px;
+
+  font-weight: 700;
+}
