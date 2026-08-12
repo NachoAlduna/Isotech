@@ -6,9 +6,6 @@
 //   /api/bombas/hidroneumaticos
 //   /api/bombas/equipos-fuerza
 
-// ─── URLs Google Sheets por subcategoría ─────────────────────────────────────
-// Reemplaza cada gid con el ID real de cada hoja publicada como CSV
-
 const SHEETS = {
     superficie: {
         productos: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRanwYQjb-Wy9oobfhVSr_Keu3guc9_GGINOmFaCFIkCPP9m7eUNQZ-nuxWwDiJRoAREMWPA_KpFE2g/pub?gid=1431501488&single=true&output=csv",
@@ -32,24 +29,7 @@ const SHEETS = {
     },
 };
 
-// ─── CSV → JSON ───────────────────────────────────────────────────────────────
-// Soporta campos con comas dentro de comillas dobles
-function csvToJson(csv) {
-    const lineas = csv.trim().split(/\r?\n/);
-    const headers = parseCsvLine(lineas[0]);
-
-    return lineas.slice(1)
-        .filter(l => l.trim() !== "")
-        .map(linea => {
-            const valores = parseCsvLine(linea);
-            const obj = {};
-            headers.forEach((header, i) => {
-                obj[header] = (valores[i] ?? "").trim();
-            });
-            return obj;
-        });
-}
-
+// ─── CSV → JSON con soporte de comas dentro de comillas ───────────────────────
 function parseCsvLine(line) {
     const result = [];
     let current = "";
@@ -70,6 +50,22 @@ function parseCsvLine(line) {
     return result;
 }
 
+function csvToJson(csv) {
+    const lineas = csv.trim().split(/\r?\n/);
+    const headers = parseCsvLine(lineas[0]);
+
+    return lineas.slice(1)
+        .filter(l => l.trim() !== "")
+        .map(linea => {
+            const valores = parseCsvLine(linea);
+            const obj = {};
+            headers.forEach((header, i) => {
+                obj[header] = (valores[i] ?? "").trim();
+            });
+            return obj;
+        });
+}
+
 // ─── Handler ──────────────────────────────────────────────────────────────────
 export async function onRequest({ params }) {
     const categoria = params.categoria;
@@ -82,46 +78,47 @@ export async function onRequest({ params }) {
         );
     }
 
-    // Fetch ambos CSV en paralelo
-    const [csvProductos, csvDetalle] = await Promise.all([
-        fetch(urls.productos).then(r => r.text()),
-        fetch(urls.detalle).then(r => r.text()),
-    ]);
+    try {
+        const [csvProductos, csvDetalle] = await Promise.all([
+            fetch(urls.productos).then(r => r.text()),
+            fetch(urls.detalle).then(r => r.text()),
+        ]);
 
-    const productos = csvToJson(csvProductos);
-    const filaDetalle = csvToJson(csvDetalle);
+        const productos  = csvToJson(csvProductos);
+        const filaDetalle = csvToJson(csvDetalle);
 
-    // Las columnas de la tabla vienen de los headers del CSV de detalle
-    // excluyendo 'producto_id' que es solo el campo de join
-    const todasLasColumnas = filaDetalle.length > 0
-        ? Object.keys(filaDetalle[0]).filter(k => k !== "producto_id")
-        : [];
+        // Columnas de la tabla = headers del detalle sin producto_id
+        const columnas = filaDetalle.length > 0
+            ? Object.keys(filaDetalle[0]).filter(k => k !== "producto_id")
+            : [];
 
-    // Agrupar filas de detalle dentro de cada producto
-    productos.forEach(producto => {
-        producto.modelos = filaDetalle
-            .filter(fila => fila.producto_id === producto.id)
-            .map(fila => {
-                // Retornar solo las columnas propias (sin producto_id)
-                const modelo = {};
-                todasLasColumnas.forEach(col => {
-                    modelo[col] = fila[col] ?? "";
+        // Agrupar modelos dentro de cada producto
+        productos.forEach(producto => {
+            producto.modelos = filaDetalle
+                .filter(fila => fila.producto_id === producto.id)
+                .map(fila => {
+                    const modelo = {};
+                    columnas.forEach(col => {
+                        modelo[col] = fila[col] ?? "";
+                    });
+                    return modelo;
                 });
-                return modelo;
-            });
-    });
+        });
 
-    return Response.json(
-        {
-            categoria,
-            columnas: todasLasColumnas,   // el frontend las usa para construir el <thead>
-            productos,
-        },
-        {
-            headers: {
-                "Cache-Control": "public, max-age=1800",
-                "Access-Control-Allow-Origin": "*",
-            },
-        }
-    );
+        return Response.json(
+            { categoria, columnas, productos },
+            {
+                headers: {
+                    "Cache-Control": "public, max-age=1800",
+                    "Access-Control-Allow-Origin": "*",
+                },
+            }
+        );
+
+    } catch (err) {
+        return new Response(
+            JSON.stringify({ error: "Error leyendo el Sheet", detalle: err.message }),
+            { status: 500, headers: { "Content-Type": "application/json" } }
+        );
+    }
 }
