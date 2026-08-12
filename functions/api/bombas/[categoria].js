@@ -52,9 +52,12 @@ function parseCsvLine(line) {
 
 function csvToJson(csv) {
     const lineas = csv.trim().split(/\r?\n/);
-    const headers = parseCsvLine(lineas[0]);
 
-    return lineas.slice(1)
+    // Filas 1 y 2 son metadata (título y nota)
+    // Los headers reales están en la fila 3 (índice 2)
+    const headers = parseCsvLine(lineas[2]);
+
+    return lineas.slice(3)
         .filter(l => l.trim() !== "")
         .map(linea => {
             const valores = parseCsvLine(linea);
