@@ -638,3 +638,28 @@ a {
   margin-bottom: 15px;
   font-weight: 700;
 }
+
+/* Hide sliders on small screens (mobile) */
+@media (max-width: 767.98px) {
+  /* main hero slider */
+  .hero,
+  #slider,
+  .carousel,
+  .carousel-inner,
+  .carousel-item,
+  .hero-image,
+  /* iso/booster sliders and card sliders */
+  .iso-slider-wrap,
+  .card-slider-wrap,
+  .slider-outer {
+    display: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* ensure images don't consume space */
+  .hero-image {
+    display: none !important;
+    height: 0 !important;
+  }
+}
