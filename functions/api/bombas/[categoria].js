@@ -96,17 +96,33 @@ export async function onRequest({ params }) {
             : [];
 
         // Agrupar modelos dentro de cada producto
-        productos.forEach(producto => {
-            producto.modelos = filaDetalle
-                .filter(fila => fila.producto_id === producto.id)
-                .map(fila => {
-                    const modelo = {};
-                    columnas.forEach(col => {
-                        modelo[col] = fila[col] ?? "";
-                    });
-                    return modelo;
-                });
+productos.forEach(producto => {
+    // Parsear fichas técnicas
+    const fichaRaw = producto.ficha_tecnica || "";
+    if (!fichaRaw.trim()) {
+        producto.fichas = [];
+    } else if (fichaRaw.includes("::")) {
+        // Formato: "Nombre::url|Nombre2::url2"
+        producto.fichas = fichaRaw.split("|").map(f => {
+            const [nombre, url] = f.split("::");
+            return { nombre: nombre.trim(), url: url.trim() };
         });
+    } else {
+        // URL simple sin nombre
+        producto.fichas = [{ nombre: "Ficha Técnica", url: fichaRaw.trim() }];
+    }
+
+    // Modelos — igual que antes
+    producto.modelos = filaDetalle
+        .filter(fila => fila.producto_id === producto.id)
+        .map(fila => {
+            const modelo = {};
+            columnas.forEach(col => {
+                modelo[col] = fila[col] ?? "";
+            });
+            return modelo;
+        });
+});
 
         return Response.json(
             { categoria, columnas, productos },
