@@ -551,7 +551,7 @@ a {
 
   /* Menú panel lateral */
   .navbar-collapse {
-    background: #fff;
+    background: #fff !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -622,14 +622,45 @@ a {
     left: 0;
     z-index: 2;
     min-width: 110px;
-    background-color: #e9ecef;
+    background-color: #e9ecef !important;
     border-right: 2px solid #dee2e6;
   }
   .tabla-productos tbody td:first-child {
-    background-color: #fff;
+    background-color: #fff !important;
     font-weight: 600;
   }
   .tabla-productos tbody tr:nth-child(even) td:first-child {
-    background-color: #f8f9fa;
+    background-color: #f8f9fa !important;
   }
+}
+
+/* Primera columna fija — headers */
+.tabla-productos thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  min-width: 110px;
+  background-color: #e9ecef !important;
+  border-right: 2px solid #dee2e6;
+}
+
+/* Primera columna fija — celdas de datos */
+.tabla-productos tbody td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  min-width: 110px;
+  background-color: #fff !important;
+  font-weight: 600;
+  border-right: 2px solid #dee2e6;
+}
+
+/* Fila par */
+.tabla-productos tbody tr:nth-child(even) td:first-child {
+  background-color: #f8f9fa !important;
+}
+
+/* Menú mobile — fondo blanco */
+.navbar-collapse {
+  background: #fff !important;
 }
