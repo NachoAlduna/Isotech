@@ -146,12 +146,12 @@ function crearTablaKits(kits) {
   const tbody = kits
     .map(
       (k) => `
-        <tr>
-            <td>${k.nombre || "-"}</td>
-            <td>${k.largo ? k.largo + " m" : "-"}</td>
-            <td>${k.diametro ? k.diametro + " mm" : "-"}</td>
-            <td><strong>${formatearPrecio(k.precio_con_iva)}</strong></td>
-        </tr>`,
+    <tr>
+        <td>${k.modelo || "-"}</td>
+        <td>${k.largo_m ? k.largo_m + " m" : "-"}</td>
+        <td>${k.diametro_mm ? k.diametro_mm + " mm" : "-"}</td>
+        <td><strong>${formatearPrecio(k.precio_con_iva)}</strong></td>
+    </tr>`,
     )
     .join("");
 
