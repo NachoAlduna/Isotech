@@ -663,3 +663,28 @@ a {
     height: 0 !important;
   }
 }
+/* ── Tabla mobile: primera columna fija ─────────── */
+@media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tabla-productos thead th:first-child,
+  .tabla-productos tbody td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background-color: #e9ecef;
+    border-right: 2px solid #dee2e6;
+  }
+
+  .tabla-productos tbody td:first-child {
+    background-color: #fff;
+    font-weight: 600;
+  }
+
+  .tabla-productos tbody tr:nth-child(even) td:first-child {
+    background-color: #f8f9fa;
+  }
+}
