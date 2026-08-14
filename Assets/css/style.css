@@ -1,3 +1,11 @@
+/* ============================================================
+   ISOTÉCNICA — Hoja de estilos principal
+   1. Variables  2. Base  3. Topbar  4. Navbar  5. Dropdown
+   6. Slider  7. Beneficios  8. Servicios  9. Marcas
+   10. Mapa  11. Contacto  12. Footer  13. Sliders ISO
+   14. Íconos  15. Producto  16. Tabla  17. Kit  18. Mobile
+   ============================================================ */
+
 :root {
   --primary: #e0053f;
   --light: #f3f3f3;
@@ -11,15 +19,32 @@ body {
   background: #fff;
   color: #555;
 }
-
 a {
   text-decoration: none;
 }
 
-/* TOPBAR */
+/* ── 3. Topbar ── */
+.topbar {
+  background: #e0053f;
+  padding: 8px 0;
+  transition: all 0.35s ease;
+}
+.topbar-content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.topbar-content a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+.topbar-content i {
+  margin-right: 8px;
+}
 
-/* HEADER */
-
+/* ── 4. Navbar ── */
 #siteHeader {
   position: sticky;
   top: 0;
@@ -27,96 +52,60 @@ a {
   background: #fff;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
 }
-
-/* TOPBAR */
-
-.topbar {
-  background: #e0053f;
-  padding: 8px 0;
-  transition: all 0.35s ease;
-}
-
-.topbar-content {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  justify-content: flex-start;
-}
-
-.topbar-content a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.topbar-content i {
-  margin-right: 8px;
-}
-
-/* NAVBAR */
-
 .navbar {
-  background: #ffffff;
+  background: #fff;
   min-height: 80px;
   transition: all 0.35s ease;
   border-top: 4px solid #e0053f;
 }
-
 .navbar-brand {
   display: flex;
   align-items: center;
 }
-
 .logo-main {
   height: 70px;
   max-height: 70px;
   width: auto;
   transition: transform 0.35s ease;
 }
-
+.header-scrolled .logo-main {
+  transform: scale(0.72);
+}
+.header-scrolled .navbar {
+  min-height: 75px;
+}
 .navbar-nav {
   gap: 25px;
 }
-
 .navbar .nav-link {
   color: #6c757d !important;
   font-size: 16px;
   font-weight: 700;
 }
-
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
   color: #e30613 !important;
 }
-
 .navbar-light .navbar-toggler {
   border-color: rgba(0, 0, 0, 0.1);
 }
-
 .navbar-light .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51, 51, 51, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* DROPDOWN */
-
+/* ── 5. Dropdown (escritorio) ── */
 .dropdown-menu {
   border: none;
   border-radius: 0;
   padding: 0;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
-
 .dropdown-item {
   padding: 12px 18px;
 }
-
 .dropdown-item:hover {
   background: #f3f3f3;
 }
-
-/* DESKTOP HOVER */
-
 @media (min-width: 992px) {
   .dropdown:hover .dropdown-menu {
     display: block;
@@ -124,42 +113,26 @@ a {
   }
 }
 
-/* SCROLL */
-
-.header-scrolled .logo-main {
-  transform: scale(0.72);
-}
-
-.header-scrolled .navbar {
-  min-height: 75px;
-}
-
-/* SLIDER */
-
+/* ── 6-12. Slider, Beneficios, Servicios, Marcas, Mapa, Contacto, Footer ── */
 .carousel-inner,
 .hero {
   width: 100%;
 }
-
 .hero-image {
   width: 100%;
   height: var(--slider-height);
   object-fit: cover;
 }
-
 .carousel-item img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* BENEFICIOS */
-
 .benefits {
   background: #f3f3f3;
   padding: 15px 0;
 }
-
 .benefits img {
   width: 180px;
   max-width: 100%;
@@ -169,10 +142,8 @@ a {
   transform: scale(1.05);
 }
 
-/* SERVICIOS */
-
 .services-section {
-  background: #ffffff;
+  background: #fff;
   padding: 70px 0;
 }
 .service-card {
@@ -181,67 +152,51 @@ a {
   gap: 20px;
   height: 100%;
 }
-
 .service-icon {
   width: 95px;
   flex-shrink: 0;
 }
-
 .service-card h4 {
   font-size: 1.6rem;
   font-weight: 700;
   color: #222;
   margin-bottom: 0.8rem;
 }
-
 .service-card p,
 .service-card li {
   font-size: 0.95rem;
   line-height: 1.7;
   color: #555;
 }
-
 .service-card ul {
   padding-left: 20px;
   margin: 0;
 }
-
 .service-card li {
   margin-bottom: 8px;
 }
 
-/* MARCAS */
 .brands {
   background: #f3f3f3;
   padding: 50px 0;
 }
 .page-bombas .brands,
 .page-calefaccion .brands {
-  background: #ffffff;
+  background: #fff;
 }
 .brand-logo {
   max-height: 55px;
-  filter: grayscale(0%);
   transition: 0.3s;
 }
-
 .brand-logo:hover {
   transform: scale(1.05);
 }
-
-.booster-card .card-title {
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-/* MAPA */
 
 .map-section {
   width: 100%;
   margin: 0;
   padding: 0;
 }
-
 .map-section iframe {
   display: block;
   width: 100%;
@@ -249,10 +204,8 @@ a {
   border: 0;
 }
 
-/* CONTACTO */
-
 .contact-section {
-  background: #ffffff;
+  background: #fff;
   padding: 70px 0;
 }
 .contact-title {
@@ -261,23 +214,19 @@ a {
   color: #222;
   margin-bottom: 25px;
 }
-
 .contact-item {
   display: flex;
   gap: 15px;
   margin-bottom: 20px;
 }
-
 .contact-item i {
   color: var(--primary);
   font-size: 1.4rem;
 }
-
 .form-control {
   border-radius: 0;
   padding: 12px;
 }
-
 .btn-danger {
   background: var(--primary);
   border: none;
@@ -285,17 +234,29 @@ a {
   padding: 12px 25px;
 }
 
-/* FOOTER */
-
 .footer {
   background: #333;
   color: white;
   padding: 25px 0;
 }
-
-/* SLIDER_Booster */
+/* ── 13. Sliders Booster / ISO ── */
 .iso-section {
   padding: 3rem 0;
+}
+.iso-section .row {
+  align-items: stretch;
+}
+.iso-section .col-md-6,
+.iso-section .col-md-7,
+.iso-section .col-md-5 {
+  display: flex;
+  flex-direction: column;
+}
+.iso-section .section-body {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
 }
 
 .iso-slider-wrap {
@@ -305,20 +266,17 @@ a {
   border-radius: 3px;
   background: #eee;
 }
-
 .iso-slider-wrap .carousel,
 .iso-slider-wrap .carousel-inner,
 .iso-slider-wrap .carousel-item {
   height: 100%;
 }
-
 .iso-slider-wrap .carousel-item img {
   width: 100%;
   height: var(--slider-height);
   object-fit: cover;
   display: block;
 }
-
 .slider-outer {
   position: relative;
 }
@@ -345,17 +303,40 @@ a {
     background 0.15s,
     transform 0.12s;
 }
-
 .iso-arrow:hover {
   background: rgba(0, 0, 0, 0.5);
   transform: translateY(-50%) scale(1.02);
 }
-
 .iso-arrow-prev {
   left: 8px;
 }
 .iso-arrow-next {
   right: 8px;
+}
+
+.iso-slider-wrap .carousel-control-prev,
+.iso-slider-wrap .carousel-control-next {
+  width: auto;
+  height: auto;
+  background: transparent;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 6px;
+}
+.iso-slider-wrap .carousel-control-prev {
+  left: 8px;
+}
+.iso-slider-wrap .carousel-control-next {
+  right: 8px;
+}
+.iso-slider-wrap .carousel-control-prev-icon,
+.iso-slider-wrap .carousel-control-next-icon {
+  background-image: none;
+}
+.iso-slider-wrap .carousel-control-prev-icon i,
+.iso-slider-wrap .carousel-control-next-icon i {
+  font-size: 18px;
+  color: #333;
 }
 
 .section-title {
@@ -367,7 +348,6 @@ a {
   margin-bottom: 1rem;
   margin-top: 0;
 }
-
 .section-body {
   font-size: 14px;
   color: #555;
@@ -375,35 +355,13 @@ a {
   text-align: left;
   margin: 0;
 }
-
 .iso-divider {
   border: none;
   border-top: 1px solid #e5e5e5;
   margin: 3rem 0;
 }
 
-/* Make slider and text columns match height inside iso-section */
-.iso-section .row {
-  align-items: stretch;
-}
-
-.iso-section .col-md-6,
-.iso-section .col-md-7,
-.iso-section .col-md-5 {
-  display: flex;
-  flex-direction: column;
-}
-
-.iso-section .section-body {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  margin: 0;
-}
-
-/* unify card and section title color */
 .booster-card .card-title {
-  /* adopt iso-section title style */
   font-weight: 700;
   font-size: 15px;
   letter-spacing: 0.06em;
@@ -411,6 +369,12 @@ a {
   color: #555;
   margin-bottom: 1rem;
   margin-top: 0;
+}
+.booster-card .card-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.85;
+  margin: 0;
 }
 .booster-card .card-slider-wrap {
   position: relative;
@@ -420,26 +384,16 @@ a {
   background: #eee;
   margin-bottom: 0.75rem;
 }
-
 .booster-card .card-slider-wrap .carousel,
 .booster-card .card-slider-wrap .carousel-inner,
 .booster-card .card-slider-wrap .carousel-item {
   height: 100%;
 }
-
 .booster-card .card-slider-wrap .carousel-item img {
   width: 100%;
   height: var(--card-slider-height);
   object-fit: cover;
   display: block;
-}
-
-/* adopt iso-section paragraph style for card text */
-.booster-card .card-text {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.85;
-  margin: 0;
 }
 
 .card-arrow {
@@ -462,7 +416,6 @@ a {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   transition: background 0.15s;
 }
-
 .card-arrow:hover {
   background: #fff;
 }
@@ -473,37 +426,24 @@ a {
   right: 6px;
 }
 
-/* Style bootstrap carousel controls inside booster cards to match main slider */
-/* Cards: make controls minimal (no dark circle) */
 .booster-card .carousel-control-prev,
 .booster-card .carousel-control-next {
   width: auto;
   height: auto;
-  border-radius: 0;
   background: transparent;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   top: 50%;
   transform: translateY(-50%);
-  box-shadow: none;
-  border: none;
   padding: 6px;
 }
-
 .booster-card .carousel-control-prev {
   left: 8px;
 }
 .booster-card .carousel-control-next {
   right: 8px;
 }
-
 .booster-card .carousel-control-prev-icon,
 .booster-card .carousel-control-next-icon {
   background-image: none;
-  width: auto;
-  height: auto;
-  display: inline-block;
 }
 .booster-card .carousel-control-prev-icon i,
 .booster-card .carousel-control-next-icon i {
@@ -511,48 +451,8 @@ a {
   color: #333;
 }
 
-/* Style carousel controls inside iso sliders to match main slider */
-/* Iso sliders: minimal controls (no dark circle) to match cards */
-.iso-slider-wrap .carousel-control-prev,
-.iso-slider-wrap .carousel-control-next {
-  width: auto;
-  height: auto;
-  border-radius: 0;
-  background: transparent;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  top: 50%;
-  transform: translateY(-50%);
-  box-shadow: none;
-  border: none;
-  padding: 6px;
-}
-
-.iso-slider-wrap .carousel-control-prev {
-  left: 8px;
-}
-.iso-slider-wrap .carousel-control-next {
-  right: 8px;
-}
-
-.iso-slider-wrap .carousel-control-prev-icon,
-.iso-slider-wrap .carousel-control-next-icon {
-  background-image: none;
-  width: auto;
-  height: auto;
-  display: inline-block;
-}
-.iso-slider-wrap .carousel-control-prev-icon i,
-.iso-slider-wrap .carousel-control-next-icon i {
-  font-size: 18px;
-  color: #333;
-}
-
-/* ICONS GRID (under benefits) */
-.page-bombas .icons-grid {
-  background: #f3f3f3;
-}
+/* ── 14. Íconos ── */
+.page-bombas .icons-grid,
 .page-calefaccion .icons-grid {
   background: #f3f3f3;
 }
@@ -582,36 +482,31 @@ a {
   color: #333;
   margin: 0;
 }
+
+/* ── 15. Bloque de producto ── */
 .producto {
   padding: 60px 0;
-
   border-bottom: 1px solid #e5e5e5;
 }
-
 .producto:last-child {
   border: none;
 }
-
 .producto img {
   width: 100%;
-
   object-fit: contain;
 }
-
 .producto h2 {
   font-weight: 700;
-
   margin-top: 25px;
 }
-
 .producto .btn {
   margin-top: 20px;
 }
-/* ── Tabla de productos ─────────────────────────── */
+
+/* ── 16. Tabla de productos ── */
 .tabla-productos {
   font-size: 0.85rem;
 }
-
 .tabla-productos thead th {
   background-color: #e9ecef;
   color: #333;
@@ -620,70 +515,120 @@ a {
   vertical-align: middle;
   border-color: #dee2e6;
 }
-
 .tabla-productos tbody td {
   text-align: center;
   vertical-align: middle;
   padding: 12px 16px;
   border-color: #dee2e6;
 }
-
 .tabla-productos tbody tr:hover {
   background: #fafafa;
 }
 
-/* ── Kit de escape ──────────────────────────────── */
+/* ── 17. Kit de escape ── */
 .kit-title {
   margin-top: 45px;
   margin-bottom: 15px;
   font-weight: 700;
 }
 
-/* Hide sliders on small screens (mobile) */
+/* ── 18. Mobile ── */
 @media (max-width: 767.98px) {
-  /* main hero slider */
+  /* Ocultar sliders */
   .hero,
   #slider,
-  .carousel,
-  .carousel-inner,
-  .carousel-item,
-  .hero-image,
-  /* iso/booster sliders and card sliders */
   .iso-slider-wrap,
   .card-slider-wrap,
   .slider-outer {
     display: none !important;
-    height: 0 !important;
-    overflow: hidden !important;
   }
 
-  /* ensure images don't consume space */
-  .hero-image {
-    display: none !important;
-    height: 0 !important;
+  /* Logo isotipo cuadrado */
+  .logo-main {
+    content: url("../img/ISO-RED.jpg");
+    height: 40px;
   }
-}
-/* ── Tabla mobile: primera columna fija ─────────── */
-@media (max-width: 768px) {
+
+  /* Menú panel lateral */
+  .navbar-collapse {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    z-index: 1050;
+    overflow-y: auto;
+    padding: 20px 0;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  .navbar-collapse.show {
+    transform: translateX(0);
+  }
+  .navbar-collapse.show::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+  }
+
+  /* Nav items */
+  .nav-item > .nav-link {
+    font-weight: 700;
+    font-size: 15px;
+    color: #222 !important;
+    padding: 12px 16px;
+    border-bottom: 0.5px solid #f0f0f0;
+  }
+  .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    display: block !important;
+  }
+  .dropdown-item {
+    font-size: 14px;
+    color: #444 !important;
+    padding: 9px 16px 9px 32px;
+    border-bottom: 0.5px solid #f5f5f5;
+  }
+  .dropdown-item:hover {
+    background: #f8f8f8;
+    color: #cc0000 !important;
+  }
+  .nav-link.dropdown-toggle::after {
+    display: none;
+  }
+
+  /* Tabla primera columna fija */
   .table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-
   .tabla-productos thead th:first-child,
   .tabla-productos tbody td:first-child {
     position: sticky;
     left: 0;
     z-index: 2;
+    min-width: 110px;
     background-color: #e9ecef;
     border-right: 2px solid #dee2e6;
   }
-
   .tabla-productos tbody td:first-child {
     background-color: #fff;
     font-weight: 600;
   }
-
   .tabla-productos tbody tr:nth-child(even) td:first-child {
     background-color: #f8f9fa;
   }
