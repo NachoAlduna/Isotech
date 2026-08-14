@@ -525,6 +525,37 @@ a {
   background: #fafafa;
 }
 
+/* Mobile: ensure first column stays fixed while table scrolls horizontally */
+@media (max-width: 767.98px) {
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative; /* make this the scrolling ancestor for sticky */
+  }
+
+  /* force a reasonable min width so horizontal scroll is available */
+  .tabla-productos {
+    min-width: 700px;
+  }
+
+  /* header first column above body cells */
+  .tabla-productos thead th:first-child {
+    z-index: 4;
+    background-color: #e9ecef !important;
+  }
+
+  .tabla-productos thead th,
+  .tabla-productos tbody td {
+    white-space: nowrap;
+  }
+
+  /* keep the same visual separators */
+  .tabla-productos thead th:first-child,
+  .tabla-productos tbody td:first-child {
+    border-right: 2px solid #dee2e6;
+  }
+}
+
 /* ── 17. Kit de escape ── */
 .kit-title {
   margin-top: 45px;
