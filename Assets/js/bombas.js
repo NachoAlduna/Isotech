@@ -17,7 +17,7 @@
   }
 
   // ── Columna que se resalta en rojo (DNxDN, DN x DN, DN) ──────────────────
-  const COLUMNAS_RESALTADAS = ["DNxDN", "DN x DN", "DN", "Conexión"];
+  const COLUMNAS_RESALTADAS = [];
 
   // ── Fetch al Worker ───────────────────────────────────────────────────────
   async function cargarProductos() {
