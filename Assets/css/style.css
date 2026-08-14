@@ -617,6 +617,49 @@ a {
     transition: transform 0.3s ease;
     background-color: #fff !important;
   }
+
+  /* Transposed table wrapper: allow horizontal scroll */
+  .transposed-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+
+  .tabla-productos.transposed {
+    min-width: 700px;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .tabla-productos.transposed thead th,
+  .tabla-productos.transposed tbody td,
+  .tabla-productos.transposed tbody th {
+    white-space: nowrap;
+  }
+
+  /* Sticky left column for transposed table */
+  .tabla-productos.transposed thead th:first-child,
+  .tabla-productos.transposed tbody th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 4;
+    min-width: 120px;
+    background-color: #e9ecef !important;
+    border-right: 2px solid #dee2e6;
+    text-align: left;
+    padding: 10px 8px;
+  }
+
+  .tabla-productos.transposed tbody td:first-child {
+    /* right after header column, ensure content aligns */
+    padding: 10px 8px;
+  }
+
+  .tabla-productos.transposed thead th {
+    text-align: center;
+    font-weight: 700;
+  }
+
   .navbar-collapse.show {
     transform: translateX(0);
     background: #fff !important;
