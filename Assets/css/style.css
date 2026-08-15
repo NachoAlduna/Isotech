@@ -162,6 +162,20 @@ a {
   color: #222;
   margin-bottom: 0.8rem;
 }
+.service-card a,
+.service-card a:visited,
+.service-card a:hover,
+.service-card a:focus,
+.service-card a:active {
+  color: inherit;
+  text-decoration: none;
+}
+.service-card .service-image-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
 .service-card p,
 .service-card li {
   font-size: 0.95rem;
@@ -458,6 +472,15 @@ a {
 }
 .icons-grid .feature-item {
   text-align: center;
+}
+.icons-grid .feature-link,
+.icons-grid .feature-link:visited,
+.icons-grid .feature-link:hover,
+.icons-grid .feature-link:focus,
+.icons-grid .feature-link:active {
+  color: inherit;
+  text-decoration: none;
+  display: block;
 }
 .icons-grid .feature-icon-circle {
   width: 120px;
