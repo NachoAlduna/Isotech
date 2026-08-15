@@ -9,56 +9,60 @@ window.addEventListener("scroll", function () {
 });
 
 function transponerTablaMovil(table) {
-  const originalHeaderCells = Array.from(table.querySelectorAll("thead th"));
-  const rows = Array.from(table.querySelectorAll("tbody tr")).map((tr) =>
-    Array.from(tr.children).map((cell) => (cell.textContent || "").trim()),
+  const headers = Array.from(table.querySelectorAll("thead th")).map((th) =>
+    th.textContent.trim(),
   );
 
-  if (!originalHeaderCells.length || !rows.length) return;
+  const filas = Array.from(table.querySelectorAll("tbody tr")).map((tr) =>
+    Array.from(tr.children).map((td) => td.textContent.trim()),
+  );
 
-  const modelNames = originalHeaderCells
-    .map((cell) => (cell.textContent || "").trim())
-    .filter((name, index, arr) => {
-      if (index === 0) {
-        return !name || !["modelo", "model"].includes(name.toLowerCase());
-      }
-      return true;
-    });
+  if (!headers.length || !filas.length) return;
 
-  if (!modelNames.length) return;
-
+  // Nombres de modelos = primera fila de datos (SM 50, SM 80...)
+  // Labels de fila = headers originales (Modelo, Código, Pot...)
   const wrapper = document.createElement("div");
   wrapper.className = "table-responsive transposed-wrap";
 
   const transposed = document.createElement("table");
-  transposed.className = `${table.className} mobile-transposed`;
+  transposed.className = table.className + " mobile-transposed";
 
   const thead = document.createElement("thead");
   const headRow = document.createElement("tr");
-  const blankCell = document.createElement("th");
-  blankCell.textContent = "";
-  headRow.appendChild(blankCell);
 
-  modelNames.forEach((name) => {
+  // Primera celda vacía (esquina superior izquierda)
+  const emptyTh = document.createElement("th");
+  emptyTh.textContent = "";
+  headRow.appendChild(emptyTh);
+
+  // Columna por cada modelo (SM 50, SM 80...)
+  filas.forEach((fila) => {
     const th = document.createElement("th");
-    th.textContent = name || "-";
+    th.textContent = fila[0] || "-";
     headRow.appendChild(th);
   });
+
   thead.appendChild(headRow);
   transposed.appendChild(thead);
 
+  // Una fila por cada campo (Código, Pot., Tensión...)
   const tbody = document.createElement("tbody");
 
-  rows.forEach((row) => {
-    const tr = document.createElement("tr");
-    const labelCell = document.createElement("th");
-    labelCell.textContent = row[0] || "-";
-    tr.appendChild(labelCell);
+  headers.forEach((header, i) => {
+    if (i === 0) return; // saltar "Modelo" — ya está en el thead
 
-    modelNames.forEach((_, colIndex) => {
-      const valueCell = document.createElement("td");
-      valueCell.textContent = row[colIndex + 1] || "-";
-      tr.appendChild(valueCell);
+    const tr = document.createElement("tr");
+
+    // Label fijo a la izquierda
+    const labelTh = document.createElement("th");
+    labelTh.textContent = header;
+    tr.appendChild(labelTh);
+
+    // Valor de cada modelo para este campo
+    filas.forEach((fila) => {
+      const td = document.createElement("td");
+      td.textContent = fila[i] || "-";
+      tr.appendChild(td);
     });
 
     tbody.appendChild(tr);
@@ -70,10 +74,9 @@ function transponerTablaMovil(table) {
   const parent = table.parentElement;
   if (!parent) return;
 
-  const existingWrapper = parent.querySelector(".transposed-wrap");
-  if (existingWrapper) {
-    existingWrapper.remove();
-  }
+  // Limpiar transpuesta anterior si existe
+  const existing = parent.querySelector(".transposed-wrap");
+  if (existing) existing.remove();
 
   table.style.display = "none";
   parent.insertBefore(wrapper, table.nextSibling);
