@@ -32,7 +32,7 @@ function transponerTablaMovil(table) {
 
   // Primera celda vacía (esquina superior izquierda)
   const emptyTh = document.createElement("th");
-  emptyTh.textContent = "";
+  emptyTh.textContent = headers[0] || "Modelo";
   headRow.appendChild(emptyTh);
 
   // Columna por cada modelo (SM 50, SM 80...)
@@ -88,16 +88,14 @@ function aplicarLayoutTablasMobile() {
 
   document.querySelectorAll(".tabla-productos").forEach((table) => {
     if (isMobile) {
-      if (!table.dataset.mobileTransposed) {
+      // Solo transponer si no está ya oculta
+      if (table.style.display !== "none") {
         transponerTablaMovil(table);
       }
     } else {
+      // Restaurar tabla original
       const nextWrapper = table.nextElementSibling;
-      if (
-        nextWrapper &&
-        nextWrapper.classList &&
-        nextWrapper.classList.contains("transposed-wrap")
-      ) {
+      if (nextWrapper && nextWrapper.classList.contains("transposed-wrap")) {
         nextWrapper.remove();
       }
       table.style.display = "";
