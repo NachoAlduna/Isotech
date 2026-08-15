@@ -531,6 +531,12 @@ a {
   border-spacing: 0;
 }
 
+.transposed-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
 @media (max-width: 767.98px) {
   .table-responsive {
     overflow-x: auto;
