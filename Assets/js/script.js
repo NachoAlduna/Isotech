@@ -10,14 +10,29 @@ window.addEventListener("scroll", function () {
 
 function transponerTablaMovil(table) {
   const headerCells = Array.from(table.querySelectorAll("thead th"));
+  const headerTexts = headerCells.map((h) => h.textContent.trim());
   const rows = Array.from(table.querySelectorAll("tbody tr")).map((tr) =>
-    Array.from(tr.children).map((cell) => cell.innerHTML),
+    Array.from(tr.querySelectorAll("td,th")).map((cell) =>
+      (cell.innerHTML || "").trim(),
+    ),
   );
 
-  if (!headerCells.length || !rows.length) return;
+  if (!headerTexts.length || !rows.length) return;
 
   const parent = table.parentElement;
   if (!parent) return;
+
+  // normalize row lengths to avoid desorden
+  const columnCount = Math.max(
+    headerTexts.length,
+    ...rows.map((r) => r.length),
+  );
+  rows.forEach((r) => {
+    while (r.length < columnCount) r.push("");
+  });
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "table-responsive transposed-wrap";
 
   const transposed = document.createElement("table");
   transposed.className = `${table.className} mobile-transposed`;
@@ -28,6 +43,7 @@ function transponerTablaMovil(table) {
   blankCell.innerHTML = "";
   headRow.appendChild(blankCell);
 
+  // top row: model labels (first cell of each original row)
   rows.forEach((row) => {
     const th = document.createElement("th");
     th.innerHTML = row[0] || "-";
@@ -38,15 +54,18 @@ function transponerTablaMovil(table) {
 
   const tbody = document.createElement("tbody");
 
-  headerCells.forEach((headerCell, index) => {
+  headerTexts.forEach((label, index) => {
     const tr = document.createElement("tr");
     const labelCell = document.createElement("th");
-    labelCell.innerHTML = headerCell.textContent.trim() || "-";
+    labelCell.innerHTML = label || "-";
     tr.appendChild(labelCell);
 
     rows.forEach((row) => {
       const valueCell = document.createElement("td");
-      valueCell.innerHTML = row[index] || "-";
+      valueCell.innerHTML =
+        row[index] !== undefined && row[index] !== null && row[index] !== ""
+          ? row[index]
+          : "-";
       tr.appendChild(valueCell);
     });
 
@@ -54,8 +73,13 @@ function transponerTablaMovil(table) {
   });
 
   transposed.appendChild(tbody);
+  wrapper.appendChild(transposed);
+
+  // hide original table and insert wrapper after it (preserve original DOM)
+  table.style.display = "none";
+  table.parentElement.insertBefore(wrapper, table.nextSibling);
   table.dataset.mobileTransposed = "true";
-  parent.replaceChild(transposed, table);
+  table.dataset.transposedWrapper = "true";
 }
 
 function restaurarTablaDesktop(table) {
@@ -80,14 +104,18 @@ function aplicarLayoutTablasMobile() {
         transponerTablaMovil(table);
       }
     } else if (table.dataset.mobileTransposed) {
-      const tableOriginal = document.createElement("table");
-      tableOriginal.className = table.className.replace(
-        " mobile-transposed",
-        "",
-      );
-      tableOriginal.innerHTML = table.dataset.originalHtml || "";
-      table.parentElement.replaceChild(tableOriginal, table);
-      delete tableOriginal.dataset.mobileTransposed;
+      // remove the transposed wrapper (inserted after original) and show original
+      const maybeWrapper = table.nextSibling;
+      if (
+        maybeWrapper &&
+        maybeWrapper.classList &&
+        maybeWrapper.classList.contains("transposed-wrap")
+      ) {
+        maybeWrapper.parentElement.removeChild(maybeWrapper);
+      }
+      table.style.display = "";
+      delete table.dataset.mobileTransposed;
+      delete table.dataset.transposedWrapper;
     }
   });
 }
